@@ -1,15 +1,4 @@
-ZSH_DIR="~/.zsh"
-
-if [ -d $ZSH_DIR -a -r $ZSH_DIR -a \
-		-x $ZSH_DIR ]; then
-	for i in $ZSH_DIR/*; do
-		[[ ${i##*/} = *.zsh ]] &&
-            [ \( -f $i -o -h $i \) -a -r $i ] && . $i
-	done
-fi
-
 alias brew='arch -arm64 brew'
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -32,3 +21,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
+source ~/.zsh/path.zsh
+source ~/.zsh/plugins.zsh
+
